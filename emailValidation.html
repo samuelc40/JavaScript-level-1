@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text is Empty or not</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 100px;
+        }
+        #userInput{
+            border: 0;
+            font-size: 40px;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+        }
+
+        #emailSuccess{
+            border: 0;
+            font-size: 40px;
+            width: 500px;
+            height: 80px;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+
+        }
+    </style>
+</head>
+<body>
+    <label for="" style="color: rgb(126, 127, 128);">Type your email...</label><br>
+    <input type="text" id="userInput">
+    <button style="border-radius: 25px; font-size: 35px; background:#c850c0; border: 0;" onclick="validate()">🌎</button>
+    <br>
+    <small id="checker" style="color: red;"></small>
+
+    <!-- <div id="emailSuccess"></div> -->
+
+    <script>
+        function validate(){
+            let userInput = document.getElementById("userInput").value;
+            if (userInput == ""){
+                document.getElementById("checker").innerText = "Your email field is empty ! ";
+            }
+            else{
+                let emailValid = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+                if ( emailValid.test(userInput) ) {
+                    
+                    //let successDiv = document.getElementById("emailSuccess").innerText = "Welcome " + userInput;
+                    //successDiv.style.display = "block";
+
+                    document.write('<div style="border-radius: 25px; font-size: 35px; background:linear-gradient(-135deg, #c850c0, #4158d0); border: 0; color:white; font-family: Arial, Helvetica, sans-serif; text-align: center;" >Welcome to ' + userInput + ' </div>>');
+
+                } else {
+                    alert("Invalid email credentials ! ");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

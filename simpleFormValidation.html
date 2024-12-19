@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div style = "width: 40%;">
+            <h1 style="font-family: 'Poppins', sans-serif;"><u> Simple Form Validation </u></h1>
+
+            <form onsubmit="return validate()">
+                <input type="text" placeholder="Enter something..." style="font-size: larger; border-radius: 5px; font-family: 'Poppins', sans-serif;" id="inputText">
+                <br>
+                <small id="errorText" style="color: red; margin-top: 10px;"></small>
+
+                <br>
+                <button type="submit" style="margin-top: 20px; font-size:large; border-radius: 13px; color: #fff; background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); font-family: 'Poppins', sans-serif;">Submit</button>
+            </form>
+            <h2 id="h" style="font-family: 'Poppins', sans-serif;"></h2>
+
+        </div>
+    </center>
+    <script>
+        function validate(){
+            var inputText = document.getElementById("inputText").value
+            if (inputText ===""){
+                document.getElementById("errorText").innerHTML = "The field is Empty !!!";
+                return false;
+            }
+            else{
+                //document.getElementById("errorText").innerHTML = "";
+                document.getElementById("h").innerHTML = "Entered text is " + inputText;
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

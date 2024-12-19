@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Number Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Phone Number Validation</h1>
+<label for="phoneNumber">Enter your phone number:</label>
+<input type="text" id="phoneNumber" placeholder="Enter phone number">
+<button onclick="validatePhoneNumber()">Validate Phone Number</button>
+<div id="result"></div>
+
+<script>
+  function validatePhoneNumber() {
+    const phoneNumberInput = document.getElementById("phoneNumber");
+    const resultContainer = document.getElementById("result");
+
+    // Get the phone number value from the user input
+    const phoneNumber = phoneNumberInput.value;
+
+    // Define the phone number pattern (10 digits, optional hyphens)
+    const phoneNumberPattern = /^\d{10}(-\d{2,})?$/;
+
+    // Check if the phone number matches the pattern
+    if (phoneNumberPattern.test(phoneNumber)) {
+      resultContainer.innerHTML = "Phone number is valid!";
+      resultContainer.style.color = "green";
+    } else {
+      resultContainer.innerHTML = "Please enter a valid phone number.";
+      resultContainer.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>

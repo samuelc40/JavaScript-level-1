@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #tooltip {
+      position: absolute;
+      display: none;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 3px;
+    }
+
+    #hoverElement {
+      padding: 10px;
+      background-color: #eee;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="hoverElement" onmouseover="showTooltip()" onmouseout="hideTooltip()">Hover over me</div>
+<div id="tooltip">This is a tooltip</div>
+
+<script>
+  function showTooltip() {
+    const tooltip = document.getElementById("tooltip");
+    const hoverElement = document.getElementById("hoverElement");
+
+    // Get the position of the hover element
+    const rect = hoverElement.getBoundingClientRect();
+
+    // Set the position of the tooltip
+    tooltip.style.top = rect.bottom + "px";
+    tooltip.style.left = rect.left + (rect.width / 2) + "px";
+
+    // Show the tooltip
+    tooltip.style.display = "block";
+  }
+
+  function hideTooltip() {
+    const tooltip = document.getElementById("tooltip");
+
+    // Hide the tooltip
+    tooltip.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

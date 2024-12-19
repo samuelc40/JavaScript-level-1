@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #temperatureInput {
+      width: 150px;
+      font-size: 16px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .convertBtn {
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Temperature Converter</h1>
+<label for="temperatureInput">Enter temperature:</label>
+<input type="text" id="temperatureInput" placeholder="Enter temperature">
+<button class="convertBtn" onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+<button class="convertBtn" onclick="convertToCelsius()">Convert to Celsius</button>
+<div id="result"></div>
+
+<script>
+  function convertToFahrenheit() {
+    convertTemperature('F');
+  }
+
+  function convertToCelsius() {
+    convertTemperature('C');
+  }
+
+  function convertTemperature(toUnit) {
+    const temperatureInput = document.getElementById("temperatureInput");
+    const resultContainer = document.getElementById("result");
+
+    // Get the temperature value from the user input
+    const temperature = parseFloat(temperatureInput.value);
+
+    if (isNaN(temperature)) {
+      resultContainer.innerHTML = "Please enter a valid temperature.";
+      resultContainer.style.color = "red";
+      return;
+    }
+
+    let convertedTemperature, resultUnit;
+
+    if (toUnit === 'F') {
+      // Convert to Fahrenheit
+      convertedTemperature = (temperature * 9/5) + 32;
+      resultUnit = 'Fahrenheit';
+    } else {
+      // Convert to Celsius
+      convertedTemperature = (temperature - 32) * 5/9;
+      resultUnit = 'Celsius';
+    }
+
+    resultContainer.innerHTML = `Converted Temperature: ${convertedTemperature.toFixed(2)} ${resultUnit}`;
+    resultContainer.style.color = "green";
+  }
+</script>
+
+</body>
+</html>

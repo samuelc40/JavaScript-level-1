@@ -1,0 +1,194 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    #timer {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="startCountdown()">Start Countdown</button>
+<div id="timer"></div>
+
+<script>
+function startCountdown() {
+  const countdownTimeInSeconds = 60; // Change this to your desired countdown time
+  let timeLeft = countdownTimeInSeconds;
+
+  const timerElement = document.getElementById("timer");
+  
+  function updateTimer() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  updateTimer(); // Initial update
+
+  const countdownInterval = setInterval(function() {
+    if (timeLeft > 0) {
+      timeLeft--;
+      updateTimer();
+    } else {
+      clearInterval(countdownInterval);
+      timerElement.textContent = "Time's up!";
+    }
+  }, 1000);
+}
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    #timer {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="startCountdown()">Start Countdown</button>
+<div id="timer"></div>
+
+<script>
+
+function startCountdown() {
+    const countdownTimeInSeconds = 60;
+    let timeLeft = countdownTimeInSeconds;
+
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+    }
+    updateTimer();
+    const countdownInterval = setInterval(function() {
+        if (timeLeft > 0) {
+            timeLeft--;
+            updateTimer();
+        }
+        else {
+            clearInterval(countdownInterval);
+            timerElement.textContent = "Time is up!";
+        }
+    }, 1000)
+}    
+
+</script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Countdown Timer</h2>
+
+    <button onclick="startCountdown()">Start Countdown</button>
+    
+    <div id="countdown"></div>
+
+    <script>
+        function startCountdown() {
+            // Set the countdown time in seconds (e.g., 5 minutes)
+            var countdownTimeInSeconds = 1 * 60;
+
+            var countdownElement = document.getElementById("countdown");
+
+            // Update the countdown every second
+            var countdownInterval = setInterval(function () {
+                var minutes = Math.floor(countdownTimeInSeconds / 60);
+                var seconds = countdownTimeInSeconds % 60;
+
+                // Display the countdown in the format MM:SS
+                countdownElement.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+                // Decrement the countdown time
+                countdownTimeInSeconds--;
+
+                // Check if the countdown has reached zero
+                if (countdownTimeInSeconds < 0) {
+                    //clearInterval(countdownInterval);
+                    countdownElement.innerHTML = "Countdown Expired!";
+                }
+            }, 1000); // 1000 milliseconds = 1 second
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Countdown Timer</h2>
+
+    <button onclick="startCountdown()">Start Countdown</button>
+    
+    <div id="countdown"></div>
+
+    <script>
+         function startCountdown(){
+            var countdownTimeInSeconds = 1 * 60;
+
+            var countdownElement = document.getElementById("countdown");
+
+            var countdownInterval = setInterval(function (){
+                var minutes = Math.floor(countdownTimeInSeconds / 60);
+                var seconds = countdownTimeInSeconds % 60;
+                countdownElement.innerHTML = minutes + " : " + (seconds < 10 ? "0" : "") + seconds;
+                countdownTimeInSeconds--;
+                if ( countdownTimeInSeconds < 0 ){
+                    clearInterval(countdownInterval);
+                    countdownElement.innerText = "Countdown Expired !";
+                }
+            }, 1000);
+        }
+    </script>
+    
+</body>
+</html> -->

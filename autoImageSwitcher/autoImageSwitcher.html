@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Slideshow</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #slideshow-container {
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {  
+      display: none;
+      height: 300px;
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Simple Slideshow</h1>
+<div id="slideshow-container">
+  <img class="slide" src="church1.jpg" alt="Image 1">
+  <img class="slide" src="church2.jpg" alt="Image 2">
+  <img class="slide" src="prayer1.jpg" alt="Image 3">
+  <img class="slide" src="prayer2.jpg" alt="Image 4">
+</div>
+
+<script>
+  let currentImageIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+
+  function showNextSlide() {
+    slides[currentImageIndex].style.display = "none";
+    currentImageIndex = (currentImageIndex + 1) % slides.length;
+    slides[currentImageIndex].style.display = "block";
+  }
+
+  setInterval(showNextSlide, 3000);
+
+  slides[currentImageIndex].style.display = "block";
+
+</script>
+
+</body>
+</html>

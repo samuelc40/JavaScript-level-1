@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Hover Effect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #imageContainer {
+      position: relative;
+    }
+
+    #originalImage,
+    #hoveredImage {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #hoveredImage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Image Hover Effect</h1>
+<div id="imageContainer">
+  <img id="originalImage" src="churchl.jpg" alt="Original Image" onmouseover="showHoveredImage()" onmouseout="hideHoveredImage()">
+  <img id="hoveredImage" src="church2.jpg" alt="Hovered Image">
+</div>
+
+<script>
+  function showHoveredImage() {
+    document.getElementById("originalImage").style.display = "none";
+    document.getElementById("hoveredImage").style.display = "block";
+  }
+
+  function hideHoveredImage() {
+    document.getElementById("originalImage").style.display = "block";
+    document.getElementById("hoveredImage").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

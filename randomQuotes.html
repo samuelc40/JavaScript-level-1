@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    #quote-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Random Quote Generator</h1>
+<div id="quote-container">
+  <p id="quote">Click here to generate...</p>
+  <button onclick="generateRandomQuote()">Generate Random Quote</button>
+</div>
+
+<script>
+  const quotes = [
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "Believe you can and you're halfway there. - Theodore Roosevelt",
+    "It always seems impossible until it's done. - Nelson Mandela",
+    "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+  ];
+
+  function generateRandomQuote() {
+    const quoteContainer = document.getElementById("quote");
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteContainer.textContent = quotes[randomIndex];
+  }
+  //generateRandomQuote();
+</script>
+
+</body>
+</html>

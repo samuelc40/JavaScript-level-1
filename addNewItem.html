@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Add Elements to List</title>
+    <style>
+        #list-container {
+            margin-top: 20px;
+        }
+
+        input, button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<label for="newItem">Add new item:</label>
+<input type="text" id="newItem" placeholder="Enter item">
+<button onclick="addItem()">Add Item</button>
+
+<ul id="itemList">
+</ul>
+
+<script>
+    function addItem() {
+        // Get the input value
+        var newItemText = document.getElementById('newItem').value;
+
+        // Check if the input is not empty
+        if (newItemText.trim() !== '') {
+            // Create a new list item
+            var newItem = document.createElement('li');
+            newItem.textContent = newItemText;
+
+            // Append the new item to the list
+            document.getElementById('itemList').appendChild(newItem);
+
+            // Clear the input field for the next entry
+            document.getElementById('newItem').value = '';
+        }
+    }
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Add Elements to List</title>
+    <style>
+        #list-container {
+            margin-top: 20px;
+        }
+
+        input, button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label for="newItem">Add new item:</label>
+<input type="text" id="newItem" placeholder="Enter item">
+<button onclick="addItem()">Add Item</button>
+
+<ul id="itemList">
+    <!-- Existing list items will be added here dynamically -->
+</ul>
+<script>
+    function addItem() {
+        var newItemText = document.getElementById("newItem").value;
+        
+        if ( newItemText.trim() !== '' ) {
+            var newItem = document.createElement('li');
+            newItem.textContent = newItemText;
+            document.getElementById('itemList').appendChild(newItem);
+            document.getElementById('itemList').value = '';
+        }
+    }
+</script>
+</body>
+</html>

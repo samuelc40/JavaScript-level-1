@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text is Empty or not</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 100px;
+        }
+        #userInput{
+            border: 0;
+            font-size: 40px;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+        }
+    </style>
+</head>
+<body>
+    <label for="" style="color: rgb(126, 127, 128);">Type something...</label><br>
+    <input type="text" id="userInput">
+    <button style="border-radius: 25px; font-size: 35px; background:#c850c0; border: 0;" onclick="validate()">🌎</button>
+    <br>
+    <small id="checker" style="color: red;"></small>
+    <script>
+        function validate(){
+            let userInput = document.getElementById("userInput").value;
+            if (userInput == ""){
+                document.getElementById("checker").innerText = "Your text field is empty ! ";
+            }
+            else{
+                document.write("<h3>Your search results...</h3>");
+            }
+        }
+    </script>
+</body>
+</html>

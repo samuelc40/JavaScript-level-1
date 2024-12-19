@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle function</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hi{
+            border: #7F7FD5 1px solid;
+            border-radius: 20px;
+            height: 150px;
+            width: 250px;
+            margin-top: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <button onclick="toggle()" style="font-size: large; background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);">Say Hii..!</button>
+            <div class="hidden" id="toggleElement">
+                <style>
+                    .hidden{
+                        display: none;
+                    }
+                </style>
+                <div class="hi">
+                    <h5 style="font-size: 90px; color:rgb(95, 94, 94)">Hii...!</h5>
+                </div>
+            </div>
+        </div>
+    </center>
+    <script>
+        function toggle(){
+            var element = document.getElementById("toggleElement");
+
+            if(element.style.display === 'none' || element.style.display === ""){
+                element.style.display = "block"
+            }
+            else{
+                element.style.display = 'none'
+            }
+        }
+    </script>
+</body>
+</html> 

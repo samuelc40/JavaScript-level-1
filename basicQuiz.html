@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Quiz</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France ? ",
+                options: ["Berlin", "Paris", "Madrid", "Rome"],
+                correctAnswer: "Paris"
+            },
+            {
+                question: "Which planet is known as the red planet ? ",
+                options: ["Earth", "Mars", "Venus", "Saturn"],
+                correctAnswer: "Mars"
+            },
+            {
+                question: "What is the largest mammal ? ",
+                options: ["Elephant", "Blue whale", "Giraffe", "Hippopotamus"],
+                correctAnswer: "Blue whale"
+            }
+        ];
+
+        function startQuiz() {
+            let score = 0;
+
+            for (let i = 0; i < questions.length; i++) {
+                let userAnswer = prompt(questions[i].question + "\nOptions: " + questions[i].options.join(", "));
+                const conUserAnswer = userAnswer.toLowerCase();
+                let conCorrectAnswer = questions[i].correctAnswer;
+
+                if ( conUserAnswer === conCorrectAnswer.toLowerCase() ) {
+                    alert("Correct answer:");
+                    score++;
+                }
+                else {
+                    alert("Wrong answer ! The correct answer is " + questions[i].correctAnswer);
+                }
+            }
+            alert("Quiz completed ! \nYour score : " + score + " out of  " + questions.length);
+            return;
+        }
+        startQuiz();
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #quiz-container {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="quiz-container">
+  <h1>Simple Quiz</h1>
+  <div id="question-container"></div>
+  <div id="options-container"></div>
+  <button onclick="nextQuestion()">Next</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  // Define your quiz questions and answers
+  const questions = [
+    {
+      question: "What is the capital of France?",
+      options: ["Berlin", "Madrid", "Paris", "Rome"],
+      correctAnswer: "Paris"
+    },
+    {
+      question: "Which planet is known as the Red Planet?",
+      options: ["Venus", "Mars", "Jupiter", "Saturn"],
+      correctAnswer: "Mars"
+    },
+    {
+      question: "What is the largest mammal in the world?",
+      options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+      correctAnswer: "Blue Whale"
+    }
+  ];
+
+  let currentQuestionIndex = 0;
+  let userAnswers = [];
+  const questionContainer = document.getElementById("question-container");
+  const optionsContainer = document.getElementById("options-container");
+  const resultContainer = document.getElementById("result");
+
+  function loadQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    questionContainer.innerHTML = `<p>${currentQuestion.question}</p>`;
+    optionsContainer.innerHTML = currentQuestion.options.map((option, index) => `
+      <input type="radio" name="option" value="${option}" id="option${index}">
+      <label for="option${index}">${option}</label><br>
+    `).join("");
+  }
+
+  function nextQuestion() {
+    const selectedOption = document.querySelector('input[name="option"]:checked');
+    if (selectedOption) {
+      userAnswers.push(selectedOption.value);
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        displayResult();
+      }
+    } else {
+      alert("Please select an option before moving to the next question.");
+    }
+  }
+
+  function displayResult() {
+    const correctAnswers = questions.filter((q, index) => q.correctAnswer === userAnswers[index]);
+    const score = correctAnswers.length;
+    resultContainer.innerHTML = `You scored ${score} out of ${questions.length}.`;
+  }
+
+  // Initial question load
+  loadQuestion();
+</script>
+
+</body>
+</html> -->

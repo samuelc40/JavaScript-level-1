@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    #inputContainer {
+      margin-top: 20px;
+    }
+
+    #guessInput {
+      width: 80px;
+      font-size: 16px;
+    }
+
+    #guessBtn {
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Number Guessing Game</h1>
+<p>Guess a number between 1 and 5:</p>
+<div id="result"></div>
+<div id="inputContainer">
+  <input type="number" id="guessInput" placeholder="Enter your guess">
+  <button id="guessBtn" onclick="checkGuess()">Guess</button>
+</div>
+
+<script>
+  const secretNumber = Math.floor(Math.random() * 5) + 1; // Random number between 1 and 10
+  let attempts = 0;
+
+  function checkGuess() {
+    const guessInput = document.getElementById("guessInput");
+    const resultElement = document.getElementById("result");
+
+    const userGuess = parseInt(guessInput.value);
+
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 5) {
+      resultElement.textContent = "Please enter a valid number between 1 and 10.";
+    } else {
+      attempts++;
+
+      if (userGuess === secretNumber) {
+        resultElement.textContent = `Congratulations! You guessed the correct number in ${attempts} attempts.`;
+        resetGame();
+      } else {
+        resultElement.textContent = "Incorrect guess. Try again!";
+      }
+    }
+
+    // Clear the input field
+    guessInput.value = "";
+  }
+
+  function resetGame() {
+    // Generate a new random number
+    secretNumber = Math.floor(Math.random() * 5) + 1;
+
+    // Reset attempts
+    attempts = 0;
+  }
+</script>
+
+</body>
+</html>
